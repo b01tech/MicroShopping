@@ -29,4 +29,13 @@ public class Product : BaseEntity
         if (price <= 0)
             throw new ArgumentException("Price must be greater than zero", nameof(price));
     }
+    public void Update(string name, string description, decimal price, string category, string imageUrl)
+    {
+        Validate(name, description, price, category, imageUrl);
+        Name = name;
+        Description = description;
+        Price = price;
+        Category = category;
+        ImageUrl = imageUrl;
+    }
 }
