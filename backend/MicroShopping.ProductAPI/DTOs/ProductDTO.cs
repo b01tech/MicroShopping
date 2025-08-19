@@ -7,11 +7,12 @@ public record ProductDTO(string Name, string Description, decimal Price, string 
     public Product ToProduct()
     {
         return new Product(
-            name: Name,
-            description: Description,
-            price: Price,
-            category: Category,
-            imageUrl: ImageUrl);
+             name: Name,
+             description: Description,
+             price: Price,
+             category: Category,
+             imageUrl: ImageUrl);
+
     }
     public static ProductDTO FromProduct(Product product)
     {
