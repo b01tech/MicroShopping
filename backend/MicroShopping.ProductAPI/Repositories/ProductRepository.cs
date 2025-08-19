@@ -20,7 +20,7 @@ internal class ProductRepository : IProductRepository
             .ToListAsync();
     }
 
-    public async Task<Product?> GetById(long id)
+    public async Task<Product?> GetByIdAsync(long id)
     {
         return await _context.Products
                         .FirstOrDefaultAsync(p => p.Id == id);

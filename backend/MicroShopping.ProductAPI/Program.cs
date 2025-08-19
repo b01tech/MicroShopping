@@ -1,4 +1,5 @@
 using MicroShopping.ProductAPI.Infra.Context;
+using MicroShopping.ProductAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,8 @@ builder.Services.AddDbContext<MySQLDbContext>(opt =>
 {
     opt.UseMySql(connectionString,ServerVersion.AutoDetect(connectionString));
 });
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddControllers();
 
